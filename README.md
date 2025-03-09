@@ -12,6 +12,13 @@ Ensure you have Neovim installed. If not, install it using:
 brew install neovim     # macOS
 sudo apt install neovim # Ubuntu/Debian
 ```
+### Plugin Management with Packer 
+Install `Packer` by cloning its repository:
+
+```bash
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
 
 ### Install Python Language Server
 Neovim requires an LSP (Language Server Protocol) for Python. Install `pyright` using npm:
