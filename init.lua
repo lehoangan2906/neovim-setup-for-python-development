@@ -8,6 +8,14 @@ require('plug') -- Plugins
 vim.opt.foldmethod = "indent"   -- or "syntax" for languages like C, C++, Java, etc,.
 vim.opt.foldlevelstart = 99     -- start with all folds open
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.foldmethod = "indent"
+    vim.opt_local.foldlevel = 99
+  end,
+})
+
 -- Setup LSP and auto-completion
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')

@@ -155,6 +155,14 @@ Modify `~/.config/nvim/init.lua` to include the following:
 ```lua
 vim.opt.foldmethod = "syntax"   -- or "indent"
 vim.opt.foldlevelstart = 99     -- start with all folds open
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.foldmethod = "indent"
+    vim.opt_local.foldlevel = 99
+  end,
+})
 ```
 
 - Notes:
