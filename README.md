@@ -6,7 +6,7 @@ This guide walks you through setting up Neovim for Python development, including
 ---
 
 ## 1. Install Neovim and Dependencies
-Ensure you have Neovim installed. If not, install it using:
+Ensure you have Neovim installed (better use the version above 0.9). If not, install it using:
 
 ```bash
 brew install neovim     # macOS
@@ -30,6 +30,11 @@ Alternatively, install `python-lsp-server` using pip:
 ```bash
 pip3 install python-lsp-server
 ```
+
+### Install Node.js (for Github Copilot)
+Copilot requires Node.js for its backend. Install if it's not already present:
+- On Ubuntu: `sudo apt-get install nodejs npm'
+- On macOS: `brew install node`
 
 ---
 
@@ -133,7 +138,58 @@ Reload Neovim and install Plugins
     - Install plugins `:PackerInstall`
 
 ---
-## 4. Fix Indentation and Comment behavior
+## 4. Install Github Copilot for code suggestions
+**Pre-requisites:**
+- **Github Copilot Subscription**: Get one at Github.
+- **Node.js**: Install if not present.
+
+**Edit Packer Config**: 
+Open `~/.config/nvim/lua/plug.lua` and add the following line:
+```lua
+require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim' -- Already present
+
+  use {
+    'zbirenbaum/copilot.lua',
+    config = function()
+      require('copilot').setup({
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          keymap = {
+            accept = '<S-Tab>', -- Accept with Shift+Tab
+            next = '<M-]>',     -- Next suggestion
+            prev = '<M-[>',     -- Previous suggestion
+            dismiss = '<C-]>',  -- Dismiss suggestion
+          },
+        },
+        filetypes = {
+          python = true, -- Enable for Python
+          ['*'] = true,  -- Enable for all filetypes
+        },
+      })
+    end,
+  }
+  -- Other plugins...
+end)
+```
+
+Then enter Normal mode by pressing `Esc`, then save the file by typing `:w' and Enter.
+
+** Sync Packer**
+- Type `:PackerSync' in Neovim normal mode and press Enter.
+- Restart Neovim by typing `:q' and Enter, then `nvim' and Enter.
+
+**Authenticate Copilot**:
+- Run ':Copilot auth' in normal mode.
+- Navigate to 'www.github.com/login/device' in your browser, then enter the code displayed on the terminal.
+
+**Using Copilot**:
+- Start typing in a Python file, and Copilot will suggest completions.
+- Use `Shift+Tab` to accept a suggestion, `Ctrl+]` to dismiss, and `Alt+]` to navigate between suggestions.
+
+---
+## 5. Fix Indentation and Comment behavior
 Modify `~/.config/nvim/lua/opts.lua`:
 ```lua
 -- Set tab width to 4 spaces
@@ -147,7 +203,7 @@ vim.opt.formatoptions:remove {'r', 'o'}
 ```
 
 --
-## 5. Enable code folding (collapse)
+## 6. Enable code folding (collapse)
 This feature alows you to collapse (fold) and expand functions or blocks of code, similar to the toggle list feature in VSCode.
 
 Modify `~/.config/nvim/init.lua` to include the following:
