@@ -163,8 +163,8 @@ vim.opt.foldlevelstart = 99     -- start with all folds open
     - `:set foldmethod=syntax` or `:set foldmethod=indent` in an open file to test it immediately.
 
 Once folding is enabled, you can toggle folds with these commands:
-    - `zc`: Collapse (close) the fold at the cursor (e.g., a function).
-    - `zo`: Open the fold at the cursor.
-    - `za`: Toggle the fold (open if closed, close if open).
-    - `zM`: Close all folds in the file.
-    - `zR`: Open all folds in the file.
+- `zc`: Collapse (close) the fold at the cursor (e.g., a function).
+- `zo`: Open the fold at the cursor.
+- `za`: Toggle the fold (open if closed, close if open).
+- `zM`: Close all folds in the file.
+- `zR`: Open all folds in the file.
