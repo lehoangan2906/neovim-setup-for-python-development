@@ -146,3 +146,25 @@ vim.opt.expandtab = true  -- Convert tabs to spaces
 vim.opt.formatoptions:remove {'r', 'o'}
 ```
 
+--
+## 5. Enable code folding (collapse)
+This feature alows you to collapse (fold) and expand functions or blocks of code, similar to the toggle list feature in VSCode.
+
+Modify `~/.config/nvim/init.lua` to include the following:
+
+```lua
+vim.opt.foldmethod = "syntax"   -- or "indent"
+vim.opt.foldlevelstart = 99     -- start with all folds open
+```
+
+- Notes:
+    - `syntax` works well for languages like C, JavaScript, or Rust with clear block delimiters (`{}`).
+    - `indent` is better for Python, where indentation defines blocks.
+    - `:set foldmethod=syntax` or `:set foldmethod=indent` in an open file to test it immediately.
+
+Once folding is enabled, you can toggle folds with these commands:
+    - `zc`: Collapse (close) the fold at the cursor (e.g., a function).
+    - `zo`: Open the fold at the cursor.
+    - `za`: Toggle the fold (open if closed, close if open).
+    - `zM`: Close all folds in the file.
+    - `zR`: Open all folds in the file.

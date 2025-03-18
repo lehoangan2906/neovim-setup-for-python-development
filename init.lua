@@ -4,6 +4,10 @@ require('opts') -- Options
 require('keys') -- Keymaps
 require('plug') -- Plugins
 
+-- Setup code function folding 
+vim.opt.foldmethod = "indent"   -- or "syntax" for languages like C, C++, Java, etc,.
+vim.opt.foldlevelstart = 99     -- start with all folds open
+
 -- Setup LSP and auto-completion
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')
