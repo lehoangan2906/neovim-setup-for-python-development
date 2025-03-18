@@ -176,13 +176,13 @@ end)
 
 Then enter Normal mode by pressing `Esc`, then save the file by typing `:w` and Enter.
 
-** Sync Packer**
+**Sync Packer**
 - Type `:PackerSync` in Neovim normal mode and press Enter.
 - Restart Neovim by typing `:q` and Enter, then `nvim` and Enter.
 
 **Authenticate Copilot**:
-- Run ':Copilot auth' in normal mode.
-- Navigate to 'www.github.com/login/device' in your browser, then enter the code displayed on the terminal.
+- Run `:Copilot auth` in normal mode.
+- Navigate to `www.github.com/login/device` in your browser, then enter the code displayed on the terminal.
 
 **Using Copilot**:
 - Start typing in a Python file, and Copilot will suggest completions.
