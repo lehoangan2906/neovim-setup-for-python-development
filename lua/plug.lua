@@ -3,6 +3,30 @@ return require('packer').startup(
     -- Packer can manage itself, this plug-in should be always kept.
     use 'wbthomason/packer.nvim'
     
+    -- Github Copilot plugin
+    use {
+        'zbirenbaum/copilot.lua',
+        config = function()
+            require('copilot').setup({
+                suggestion = {
+                    enabled = true,
+                    auto_trigger = true,    -- suggestion appear as you type
+                    keymap = {
+                        accept = '<S-Tab>',   -- Accept suggestion with Shift + Tab
+                        next = '<M-]>',     -- Next suggestion (Alt + ])
+                        prev = '<M-[>',     -- Previous suggestion (Alt + [)
+                        dismiss = '<C-]>',  -- Dismiss suggestion (Ctrl + ])
+                    },
+                },
+                filetypes = {
+                    python = true,  -- Enable for python
+                    ['*'] = true,   -- Enable for all filetypes (adjust as needed)
+                },
+            })
+        end,
+    }
+
+
     -- LSP Configurations
     use 'neovim/nvim-lspconfig'           -- Collection of configurations for built-inLSP client
 
