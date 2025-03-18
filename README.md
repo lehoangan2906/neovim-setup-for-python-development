@@ -1,7 +1,7 @@
 # Neovim Setup for Python Development
 
 ## Introduction
-This guide walks you through setting up Neovim for Python development, including LSP configuration, auto-completion, and additional settings like tab width and comment behavior.
+This guide walks you through setting up Neovim for Python development, including Github Copilot, LSP configuration, auto-completion, and additional settings like tab width and comment behavior.
 
 ---
 
