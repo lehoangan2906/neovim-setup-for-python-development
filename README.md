@@ -174,11 +174,11 @@ require('packer').startup(function(use)
 end)
 ```
 
-Then enter Normal mode by pressing `Esc`, then save the file by typing `:w' and Enter.
+Then enter Normal mode by pressing `Esc`, then save the file by typing `:w` and Enter.
 
 ** Sync Packer**
-- Type `:PackerSync' in Neovim normal mode and press Enter.
-- Restart Neovim by typing `:q' and Enter, then `nvim' and Enter.
+- Type `:PackerSync` in Neovim normal mode and press Enter.
+- Restart Neovim by typing `:q` and Enter, then `nvim` and Enter.
 
 **Authenticate Copilot**:
 - Run ':Copilot auth' in normal mode.
