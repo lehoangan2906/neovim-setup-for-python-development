@@ -169,6 +169,7 @@ vim.api.nvim_create_autocmd("FileType", {
     - `syntax` works well for languages like C, JavaScript, or Rust with clear block delimiters (`{}`).
     - `indent` is better for Python, where indentation defines blocks.
     - `:set foldmethod=syntax` or `:set foldmethod=indent` in an open file to test it immediately.
+    - Folding is based on indentation levels, and the foldable region starts at the indented lines below a less-indented line (like your def line), not the line itself.
 
 Once folding is enabled, you can toggle folds with these commands:
 - `zc`: Collapse (close) the fold at the cursor (e.g., a function).
