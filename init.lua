@@ -41,23 +41,33 @@ lspconfig.pyright.setup {
 -- Setup Auto-completion
 cmp.setup({
     snippet = {
-	expand = function(args)
+        expand = function(args)
             require('luasnip').lsp_expand(args.body) -- Use LuaSnip for snippets
-	end,
+        end,
     },
 
     mapping = {
-	['<C-b>'] = cmp.mapping.scroll_docs(-4),
-	['<C-f>'] = cmp.mapping.scroll_docs(4),
-	['<C-Space>'] = cmp.mapping.complete(),
-	['<C-e>'] = cmp.mapping.abort(),
-	['<CR>'] = cmp.mapping.confirm({select = true}),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping({
+            i = function(fallback)
+                if cmp.visible() and cmp.get_active_entry() then
+                    cmp.confirm({ select = false }) -- Confirm only if explicitly selected
+                else
+                    fallback() -- Otherwise, insert a newline
+                end
+            end,
+        }),
+        ['<Tab>'] = cmp.mapping.select_next_item(), -- Navigate to next suggestion
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(), -- Navigate to previous suggestion
     },
 
     sources = cmp.config.sources({
-	{name = 'nvim_lsp'},
-	{name = 'luasnip'},
-	}, {
-	{name = 'buffer'},
+        {name = 'nvim_lsp'},
+        {name = 'luasnip'},
+    }, {
+        {name = 'buffer'},
     })
 })
