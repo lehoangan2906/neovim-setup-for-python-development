@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/stark/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?.lua;/Users/stark/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?/init.lua;/Users/stark/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?.lua;/Users/stark/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/stark/.cache/nvim/packer_hererocks/2.1.1727870382/lib/lua/5.1/?.so"
+local package_path_str = "/Users/edwardhoang/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?.lua;/Users/edwardhoang/.cache/nvim/packer_hererocks/2.1.1753364724/share/lua/5.1/?/init.lua;/Users/edwardhoang/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?.lua;/Users/edwardhoang/.cache/nvim/packer_hererocks/2.1.1753364724/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/edwardhoang/.cache/nvim/packer_hererocks/2.1.1753364724/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,48 +76,28 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/Users/stark/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    path = "/Users/edwardhoang/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/Users/stark/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-nvim-lsp"] = {
-    loaded = true,
-    path = "/Users/stark/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
-    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
-  cmp_luasnip = {
-    loaded = true,
-    path = "/Users/stark/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
   ["copilot.lua"] = {
-    config = { "\27LJ\2\ní\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\14filetypes\1\0\2\vpython\2\6*\2\15suggestion\1\0\2\15suggestion\0\14filetypes\0\vkeymap\1\0\4\tnext\n<M-]>\vaccept\f<S-Tab>\fdismiss\n<C-]>\tprev\n<M-[>\1\0\3\vkeymap\0\17auto_trigger\2\fenabled\2\nsetup\fcopilot\frequire\0" },
+    config = { "\27LJ\2\në\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\14filetypes\1\0\2\vpython\2\6*\2\15suggestion\1\0\2\15suggestion\0\14filetypes\0\vkeymap\1\0\4\tnext\n<M-]>\vaccept\n<Tab>\tprev\n<M-[>\fdismiss\n<C-]>\1\0\3\17auto_trigger\2\fenabled\2\vkeymap\0\nsetup\fcopilot\frequire\0" },
     loaded = true,
-    path = "/Users/stark/.local/share/nvim/site/pack/packer/start/copilot.lua",
+    path = "/Users/edwardhoang/.local/share/nvim/site/pack/packer/start/copilot.lua",
     url = "https://github.com/zbirenbaum/copilot.lua"
   },
   ["friendly-snippets"] = {
     loaded = true,
-    path = "/Users/stark/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    path = "/Users/edwardhoang/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
-  },
-  ["nvim-cmp"] = {
-    loaded = true,
-    path = "/Users/stark/.local/share/nvim/site/pack/packer/start/nvim-cmp",
-    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/stark/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/Users/edwardhoang/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/stark/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/Users/edwardhoang/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   }
 }
@@ -125,7 +105,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: copilot.lua
 time([[Config for copilot.lua]], true)
-try_loadstring("\27LJ\2\ní\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\14filetypes\1\0\2\vpython\2\6*\2\15suggestion\1\0\2\15suggestion\0\14filetypes\0\vkeymap\1\0\4\tnext\n<M-]>\vaccept\f<S-Tab>\fdismiss\n<C-]>\tprev\n<M-[>\1\0\3\vkeymap\0\17auto_trigger\2\fenabled\2\nsetup\fcopilot\frequire\0", "config", "copilot.lua")
+try_loadstring("\27LJ\2\në\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\3\0005\4\4\0=\4\5\3=\3\a\0025\3\b\0=\3\t\2B\0\2\1K\0\1\0\14filetypes\1\0\2\vpython\2\6*\2\15suggestion\1\0\2\15suggestion\0\14filetypes\0\vkeymap\1\0\4\tnext\n<M-]>\vaccept\n<Tab>\tprev\n<M-[>\fdismiss\n<C-]>\1\0\3\17auto_trigger\2\fenabled\2\vkeymap\0\nsetup\fcopilot\frequire\0", "config", "copilot.lua")
 time([[Config for copilot.lua]], false)
 
 _G._packer.inside_compile = false

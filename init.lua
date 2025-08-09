@@ -21,7 +21,7 @@ local lspconfig = require('lspconfig')
 
 -- Enable pyright for Python LSP
 lspconfig.pyright.setup {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    capabilities = vim.lsp.protocol.make_client_capabilities(),
     on_attach = function(client, bufnr)
 	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 	local opts = { noremap=true, silent=true }
